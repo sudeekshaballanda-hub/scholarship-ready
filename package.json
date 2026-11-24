@@ -1,0 +1,24 @@
+{
+  "name": "scholarshipready",
+  "version": "1.0.0",
+  "description": "A free, trust-first web platform that helps students find scholarships they're eligible for, check their documents against each scheme's requirements, and prepare a ready-to-submit application pack — without OTP sharing or cyber cafés.",
+  "main": "index.js",
+"scripts": {
+  "start": "serve .",
+  "dev": "live-server"
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sudeekshaballanda-hub/scholarship-ready.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sudeekshaballanda-hub/scholarship-ready/issues"
+  },
+  "homepage": "https://github.com/sudeekshaballanda-hub/scholarship-ready#readme",
+  "devDependencies": {
+    "serve": "^14.2.8"
+  }
+}
