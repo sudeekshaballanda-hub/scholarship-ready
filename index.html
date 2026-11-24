@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ScholarshipReady – Find Scholarships You Deserve</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo">🎓 ScholarshipReady</div>
+      <nav class="nav">
+        <a href="#" class="active">Dashboard</a>
+        <a href="#">My Documents</a>
+        <a href="#">My Applications</a>
+        <a href="#" class="btn-trust">🔒 No OTP Required</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero / intro -->
+  <section class="hero">
+    <div class="container">
+      <h1>Find scholarships you're eligible for</h1>
+      <p>Filter, check your documents, and prepare a ready-to-submit pack — all free, no OTP, no cyber café.</p>
+    </div>
+  </section>
+
+  <!-- Filters -->
+  <section class="filters container">
+    <div class="filter-grid">
+      <div class="filter-group">
+        <label for="search">Search</label>
+        <input type="text" id="search" placeholder="Search by name or provider..." />
+      </div>
+      <div class="filter-group">
+        <label for="level">Education Level</label>
+        <select id="level">
+          <option value="">All Levels</option>
+          <option value="Class 9">Class 9</option>
+          <option value="Class 10">Class 10</option>
+          <option value="Class 11">Class 11</option>
+          <option value="Class 12">Class 12</option>
+          <option value="UG">UG</option>
+          <option value="PG">PG</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="category">Category</label>
+        <select id="category">
+          <option value="">All Categories</option>
+          <option value="General">General</option>
+          <option value="OBC">OBC</option>
+          <option value="SC">SC</option>
+          <option value="ST">ST</option>
+          <option value="EWS">EWS</option>
+          <option value="Minority">Minority</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="type">Provider Type</label>
+        <select id="type">
+          <option value="">All Types</option>
+          <option value="Government">Government</option>
+          <option value="State">State</option>
+          <option value="Private">Private</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="income">Family Income (max)</label>
+        <select id="income">
+          <option value="">Any</option>
+          <option value="250000">Up to ₹2.5L</option>
+          <option value="450000">Up to ₹4.5L</option>
+          <option value="600000">Up to ₹6L</option>
+          <option value="800000">Up to ₹8L</option>
+          <option value="1500000">Up to ₹15L</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="sort">Sort By</label>
+        <select id="sort">
+          <option value="deadline">Deadline (soonest)</option>
+          <option value="amount">Amount (high to low)</option>
+          <option value="name">Name (A–Z)</option>
+        </select>
+      </div>
+    </div>
+    <div class="filter-actions">
+      <button id="resetFilters" class="btn-secondary">Reset Filters</button>
+      <span id="resultCount" class="result-count"></span>
+    </div>
+  </section>
+
+  <!-- Scholarship cards -->
+  <main class="container">
+    <div id="scholarshipList" class="card-grid"></div>
+    <p id="emptyState" class="empty-state" hidden>No scholarships match your filters. Try resetting.</p>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p><strong>Trust-first:</strong> We never ask for your OTP, NSP password, or Aadhaar biometrics. You stay in control.</p>
+      <p class="muted">ScholarshipReady – student project · Data is for demonstration</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
