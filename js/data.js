@@ -9,7 +9,13 @@ const scholarships = [
     level: ["Class 9", "Class 10"],
     category: ["SC", "ST"],
     incomeLimit: 250000,
-    documents: ["Aadhaar", "Income Certificate", "Caste Certificate", "Bank Passbook", "Previous Marksheet"],
+    documents: [
+      { name: "Aadhaar Card", type: "pdf,jpg,png", maxKB: 500, note: "Front and back on one page", validity: "none" },
+      { name: "Income Certificate", type: "pdf", maxKB: 200, note: "Issued in current financial year", validity: "1year" },
+      { name: "Caste Certificate", type: "pdf", maxKB: 200, note: "SC/ST certificate from competent authority", validity: "none" },
+      { name: "Bank Passbook", type: "pdf,jpg", maxKB: 300, note: "First page showing account number and IFSC", validity: "none" },
+      { name: "Previous Marksheet", type: "pdf", maxKB: 500, note: "Last passed class marksheet", validity: "none" }
+    ],
     link: "https://scholarships.gov.in"
   },
   {
@@ -22,7 +28,13 @@ const scholarships = [
     level: ["Class 11", "Class 12", "UG", "PG"],
     category: ["OBC"],
     incomeLimit: 250000,
-    documents: ["Aadhaar", "Income Certificate", "OBC Certificate", "Fee Receipt", "Bank Passbook"],
+    documents: [
+      { name: "Aadhaar Card", type: "pdf,jpg,png", maxKB: 500, note: "Front and back on one page", validity: "none" },
+      { name: "Income Certificate", type: "pdf", maxKB: 200, note: "Issued in current financial year", validity: "1year" },
+      { name: "OBC Certificate", type: "pdf", maxKB: 200, note: "Non-creamy layer certificate", validity: "none" },
+      { name: "Fee Receipt", type: "pdf,jpg", maxKB: 300, note: "Current academic year fee receipt", validity: "none" },
+      { name: "Bank Passbook", type: "pdf,jpg", maxKB: 300, note: "First page showing account number and IFSC", validity: "none" }
+    ],
     link: "https://scholarships.gov.in"
   },
   {
@@ -35,7 +47,13 @@ const scholarships = [
     level: ["UG"],
     category: ["General", "OBC", "SC", "ST", "EWS", "Minority"],
     incomeLimit: 1500000,
-    documents: ["Aadhaar", "Income Certificate", "Class 12 Marksheet", "Admission Proof", "Bank Passbook"],
+    documents: [
+      { name: "Aadhaar Card", type: "pdf,jpg,png", maxKB: 500, note: "Front and back on one page", validity: "none" },
+      { name: "Income Certificate", type: "pdf", maxKB: 200, note: "Issued in current financial year", validity: "1year" },
+      { name: "Class 12 Marksheet", type: "pdf", maxKB: 500, note: "Board marksheet", validity: "none" },
+      { name: "Admission Proof", type: "pdf", maxKB: 300, note: "Admission/fee receipt from current institution", validity: "none" },
+      { name: "Bank Passbook", type: "pdf,jpg", maxKB: 300, note: "First page showing account number and IFSC", validity: "none" }
+    ],
     link: "https://www.scholarships.reliancefoundation.org"
   },
   {
@@ -48,7 +66,14 @@ const scholarships = [
     level: ["UG"],
     category: ["General", "OBC", "SC", "ST", "EWS", "Minority"],
     incomeLimit: 600000,
-    documents: ["Aadhaar", "Income Certificate", "Class 12 Marksheet", "Admission Proof", "Bank Passbook", "Photo"],
+    documents: [
+      { name: "Aadhaar Card", type: "pdf,jpg,png", maxKB: 500, note: "Front and back on one page", validity: "none" },
+      { name: "Income Certificate", type: "pdf", maxKB: 200, note: "Issued in current financial year", validity: "1year" },
+      { name: "Class 12 Marksheet", type: "pdf", maxKB: 500, note: "Board marksheet", validity: "none" },
+      { name: "Admission Proof", type: "pdf", maxKB: 300, note: "Admission/fee receipt from current institution", validity: "none" },
+      { name: "Bank Passbook", type: "pdf,jpg", maxKB: 300, note: "First page showing account number and IFSC", validity: "none" },
+      { name: "Passport Photo", type: "jpg,png", maxKB: 200, note: "Recent passport-size photo, plain background", validity: "none" }
+    ],
     link: "https://www.kotakeducation.org"
   },
   {
@@ -61,7 +86,12 @@ const scholarships = [
     level: ["UG", "PG"],
     category: ["General", "OBC", "SC", "ST", "EWS", "Minority"],
     incomeLimit: null,
-    documents: ["Aadhaar", "Class 12 Marksheet", "Admission Proof", "Bank Passbook"],
+    documents: [
+      { name: "Aadhaar Card", type: "pdf,jpg,png", maxKB: 500, note: "Front and back on one page", validity: "none" },
+      { name: "Class 12 Marksheet", type: "pdf", maxKB: 500, note: "Board marksheet", validity: "none" },
+      { name: "Admission Proof", type: "pdf", maxKB: 300, note: "Admission/fee receipt from current institution", validity: "none" },
+      { name: "Bank Passbook", type: "pdf,jpg", maxKB: 300, note: "First page showing account number and IFSC", validity: "none" }
+    ],
     link: "https://online-inspire.gov.in"
   },
   {
@@ -74,7 +104,13 @@ const scholarships = [
     level: ["UG", "PG"],
     category: ["General", "OBC", "SC", "ST", "EWS", "Minority"],
     incomeLimit: 800000,
-    documents: ["Aadhaar", "Domicile Certificate", "Income Certificate", "Fee Receipt", "Bank Passbook"],
+    documents: [
+      { name: "Aadhaar Card", type: "pdf,jpg,png", maxKB: 500, note: "Front and back on one page", validity: "none" },
+      { name: "Domicile Certificate", type: "pdf", maxKB: 200, note: "Maharashtra domicile certificate", validity: "none" },
+      { name: "Income Certificate", type: "pdf", maxKB: 200, note: "Issued in current financial year", validity: "1year" },
+      { name: "Fee Receipt", type: "pdf,jpg", maxKB: 300, note: "Current academic year fee receipt", validity: "none" },
+      { name: "Bank Passbook", type: "pdf,jpg", maxKB: 300, note: "First page showing account number and IFSC", validity: "none" }
+    ],
     link: "https://mahadbt.maharashtra.gov.in"
   },
   {
@@ -87,7 +123,12 @@ const scholarships = [
     level: ["UG", "PG"],
     category: ["General", "OBC", "SC", "ST", "EWS", "Minority"],
     incomeLimit: 450000,
-    documents: ["Aadhaar", "Income Certificate", "Class 12 Marksheet", "Bank Passbook"],
+    documents: [
+      { name: "Aadhaar Card", type: "pdf,jpg,png", maxKB: 500, note: "Front and back on one page", validity: "none" },
+      { name: "Income Certificate", type: "pdf", maxKB: 200, note: "Issued in current financial year", validity: "1year" },
+      { name: "Class 12 Marksheet", type: "pdf", maxKB: 500, note: "Board marksheet", validity: "none" },
+      { name: "Bank Passbook", type: "pdf,jpg", maxKB: 300, note: "First page showing account number and IFSC", validity: "none" }
+    ],
     link: "https://scholarships.gov.in"
   },
   {
@@ -100,7 +141,13 @@ const scholarships = [
     level: ["Class 11", "Class 12", "UG"],
     category: ["General", "OBC", "SC", "ST", "EWS", "Minority"],
     incomeLimit: 400000,
-    documents: ["Aadhaar", "Income Certificate", "Previous Marksheet", "Fee Receipt", "Bank Passbook"],
+    documents: [
+      { name: "Aadhaar Card", type: "pdf,jpg,png", maxKB: 500, note: "Front and back on one page", validity: "none" },
+      { name: "Income Certificate", type: "pdf", maxKB: 200, note: "Issued in current financial year", validity: "1year" },
+      { name: "Previous Marksheet", type: "pdf", maxKB: 500, note: "Last passed class marksheet", validity: "none" },
+      { name: "Fee Receipt", type: "pdf,jpg", maxKB: 300, note: "Current academic year fee receipt", validity: "none" },
+      { name: "Bank Passbook", type: "pdf,jpg", maxKB: 300, note: "First page showing account number and IFSC", validity: "none" }
+    ],
     link: "https://www.buddy4study.com"
   }
 ];

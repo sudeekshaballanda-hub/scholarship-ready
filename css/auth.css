@@ -1,0 +1,164 @@
+.auth-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 140px);
+  padding: 40px 20px;
+}
+
+.auth-card {
+  background: var(--card);
+  width: 100%;
+  max-width: 420px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(20, 45, 90, 0.08);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.auth-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border);
+}
+
+.auth-tab {
+  flex: 1;
+  padding: 16px;
+  background: none;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.auth-tab.active {
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+  background: #f8fbff;
+}
+
+.auth-form {
+  padding: 30px;
+}
+
+.auth-form h2 { font-size: 1.3rem; margin-bottom: 6px; }
+.auth-sub { font-size: 0.9rem; color: var(--muted); margin-bottom: 20px; }
+
+.input-group {
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.input-group input, .input-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.input-group input:focus, .input-group select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px #e5f0ff;
+}
+
+.auth-form .btn-primary {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+}
+
+.error-msg {
+  color: var(--danger);
+  font-size: 0.85rem;
+  margin-top: 12px;
+  text-align: center;
+}
+
+/* Profile Page Specific */
+.profile-section {
+  max-width: 600px;
+  margin: 40px auto;
+  background: var(--card);
+  padding: 30px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+}
+.profile-section h1 { margin-bottom: 8px; }
+.profile-section p.sub { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media(max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
+
+/* Document Vault Styles */
+.vault-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.vault-card {
+  border: 2px dashed #cbd5e1;
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+  transition: all 0.2s;
+  background: #f8fafc;
+  position: relative;
+}
+
+.vault-card.uploaded {
+  border: 2px solid var(--accent);
+  background: #f0fdf4;
+}
+
+.vault-card h4 {
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+.vault-card p {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.vault-card .file-input {
+  display: none;
+}
+
+.vault-card .upload-btn {
+  background: #fff;
+  border: 1px solid var(--border);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.vault-card.uploaded .upload-btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+}
+
+.status-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.2rem;
+}
