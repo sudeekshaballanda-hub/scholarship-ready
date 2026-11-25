@@ -1,22 +1,40 @@
+console.log("detail.js loaded");
+
 (function () {
+  console.log("URL:", window.location.href);
+
   const contentEl = document.getElementById("detailContent");
   const notFoundEl = document.getElementById("notFound");
 
-  // 1. Get Scholarship ID from URL
   const params = new URLSearchParams(window.location.search);
-  const id = Number(params.get("id"));
-  const sch = scholarships.find((s) => s.id === id);
+  const idParam = params.get("id");
+  console.log("ID Param:", idParam);
 
-  if (!sch) {
+  if (!idParam) {
+    console.log("No ID in URL, showing error.");
     notFoundEl.hidden = false;
+    document.querySelector("#notFound h2").textContent = "No scholarship selected";
+    document.querySelector("#notFound p").textContent = "Please go back to the dashboard and click 'View Details' on a card.";
     return;
   }
 
-  // 2. Check User Session & Vault
+  const id = Number(idParam);
+  console.log("Searching for ID:", id);
+  console.log("Data available:", typeof scholarships);
+
+  const sch = scholarships.find((s) => s.id === id);
+  console.log("Found scholarship:", sch ? sch.name : "NONE");
+
+  if (!sch) {
+    notFoundEl.hidden = false;
+    document.querySelector("#notFound h2").textContent = "Scholarship not found";
+    document.querySelector("#notFound p").textContent = "The ID in the URL does not match any scholarship in our database.";
+    return;
+  }
+
   const session = JSON.parse(localStorage.getItem("sr_session"));
   const vault = session && session.vault ? session.vault : {};
 
-  // Helper to match doc names (e.g., "Aadhaar Card" matches "aadhaar")
   function getVaultFile(docName) {
     for (const key in vault) {
       if (docName.toLowerCase().includes(key.toLowerCase()) || key.toLowerCase().includes(docName.toLowerCase())) {
@@ -26,7 +44,6 @@
     return null;
   }
 
-  // 3. Fill Basic Details
   document.title = `${sch.name} – ScholarshipReady`;
   document.getElementById("schName").textContent = sch.name;
   document.getElementById("schProvider").textContent = sch.provider;
@@ -45,7 +62,6 @@
 
   document.getElementById("officialLink").href = sch.link;
 
-  // 4. Render Document List with Statuses
   let missingCount = 0;
   const docListEl = document.getElementById("docList");
   
@@ -62,7 +78,6 @@
             <div class="doc-note">${d.note}</div>
             <div class="doc-rules" style="margin-top: 6px;">
               <span>Max size: ${d.maxKB} KB</span>
-              ${d.validity !== "none" ? `<span>Validity: ${d.validity}</span>` : ""}
             </div>
           </div>
           <div style="text-align: right;">
@@ -75,11 +90,10 @@
     `;
   }).join("");
 
-  // 5. Handle Readiness Panel State
-  const readinessPanel = document.getElementById("readinessPanel");
   const readyAction = document.getElementById("readyAction");
   const missingAlert = document.getElementById("missingDocsAlert");
   const readinessMsg = document.getElementById("readinessMsg");
+  const readinessPanel = document.getElementById("readinessPanel");
 
   if (!session) {
     readinessMsg.textContent = "Log in to check if your documents are ready for this scholarship.";
@@ -95,7 +109,6 @@
     readinessPanel.style.borderColor = "#bbf7d0";
   }
 
-  // 6. Generate Print Pack
   window.generatePack = function() {
     document.getElementById("printSchName").textContent = sch.name;
     document.getElementById("printProvider").textContent = sch.provider;
@@ -113,7 +126,6 @@
       `;
     }).join("");
 
-    // Trigger browser print dialog
     window.print();
   };
 
